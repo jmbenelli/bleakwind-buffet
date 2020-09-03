@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwinBuffet.Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
     public class FriedMiraak
     {
