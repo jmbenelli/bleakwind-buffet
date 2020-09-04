@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class representing the Philly Poacher
+    /// </summary>
     public class PhillyPoacher
     {
         private double price = 7.23;
@@ -29,7 +32,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets if the customers wants sirloin
         /// </summary>
-        private bool sirloin;
+        private bool sirloin = true;
         public bool Sirloin
         {
             get
@@ -39,14 +42,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                sirloin = true;
+                sirloin = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants onion
         /// </summary>
-        private bool onion;
+        private bool onion = true;
         public bool Onion
         {
             get
@@ -56,14 +59,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                onion = true;
+                onion = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants a roll
         /// </summary>
-        private bool roll;
+        private bool roll = true;
         public bool Roll
         {
             get
@@ -73,13 +76,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                roll = true;
+                roll = value;
             }
         }
 
         /// <summary>
         /// Displays the customers special instructions
         /// </summary>
+        /// <Returns>A string list of the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get
@@ -96,7 +100,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Overrides the ToString() to display "Philly Poacher"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the Philly Poacher</returns>
         public override string ToString()
         {
             return "Philly Poacher";

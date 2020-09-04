@@ -9,6 +9,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// The class representing the Garden Orc Omelette
+    /// </summary>
     public class GardenOrcOmelette
     {
         private double price = 4.57;
@@ -28,7 +31,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets if the customer wants broccoli
         /// </summary>
-        private bool broccoli;
+        private bool broccoli = true;
         public bool Broccoli
         {
             get
@@ -38,14 +41,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                broccoli = true;
+                broccoli = value;
             }
         }
 
         /// <summary>
         /// Gets if the user wants mushrooms
         /// </summary>
-        private bool mushrooms;
+        private bool mushrooms = true;
         public bool Mushrooms
         {
             get
@@ -55,14 +58,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                mushrooms = true;
+                mushrooms = value;
             }
         }
 
         /// <summary>
         /// Gets if the user wants tomato
         /// </summary>
-        private bool tomato;
+        private bool tomato = true;
         public bool Tomato
         {
             get
@@ -72,14 +75,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                tomato = true;
+                tomato = value;
             }
         }
 
         /// <summary>
         /// Gets if the user wants cheddar
         /// </summary>
-        private bool cheddar;
+        private bool cheddar = true;
         public bool Cheddar
         {
             get
@@ -89,13 +92,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                cheddar = true;
+                cheddar = value;
             }
         }
 
         /// <summary>
         /// Displays the users special instructions
         /// </summary>
+        /// <Returns>A string list of the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get
@@ -113,7 +117,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Overrides the ToString() method to display "Garden Orc Omelette"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the omelette</returns>
         public override string ToString()
         {
             return "Garden Orc Omelette";

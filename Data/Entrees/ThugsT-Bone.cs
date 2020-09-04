@@ -9,6 +9,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// A class representing Thugs T-Bone
+    /// </summary>
     public class ThugsT_Bone
     {
         private double price = 6.44;
@@ -28,6 +31,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Displays the users special instructions
         /// </summary>
+        /// <Returns>A string list of the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get
@@ -41,7 +45,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Overrides the ToString() method to display ""Thugs T-Bone"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string decribing Thugs T-Bone</returns>
         public override string ToString()
         {
             return "Thugs T-Bone";

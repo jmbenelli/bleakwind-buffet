@@ -10,13 +10,22 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class Representing the Candlehearth Coffee
+    /// </summary>
     public class CandlehearthCoffee
     {
+        /// <summary>
+        /// Getter and Setter for the size of the Coffee
+        /// </summary>
         public Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the coffee depending on size
         /// </summary>
+        /// <exception cref="System.NotImplementedException">
+        /// Thrown if the price for the size is not known 
+        /// </exception>
         public double Price
         {
             get
@@ -31,6 +40,9 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the coffee depending on size
         /// </summary>
+        /// <exception cref="System.NotImplementedException">
+        /// Thrown if the calories for the size is not known 
+        /// </exception>
         public uint Calories
         {
             get
@@ -46,7 +58,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets whether the customer wants ice or not
         /// </summary>
-        private bool ice;
+        private bool ice = false;
         public bool Ice
         {
             get
@@ -56,7 +68,7 @@ namespace BleakwindBuffet.Data.Drinks
 
             set
             {
-                ice = false;
+                ice = value;
             }
         }
 
@@ -64,7 +76,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets whether the customer wants cream or not
         /// </summary>
-        private bool roomForCream;
+        private bool roomForCream = false;
         public bool RoomForCream
         {
             get
@@ -74,14 +86,14 @@ namespace BleakwindBuffet.Data.Drinks
 
             set
             {
-                roomForCream = false;
+                roomForCream = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants decaf or not
         /// </summary>
-        private bool decaf;
+        private bool decaf = false;
         public bool Decaf
         {
             get
@@ -91,13 +103,14 @@ namespace BleakwindBuffet.Data.Drinks
 
             set
             {
-                decaf = false;
+                decaf = value;
             }
         }
 
         /// <summary>
         /// Displays the users special instructions
         /// </summary>
+        /// <Returns>A string list describing the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get
@@ -113,7 +126,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Overrides the ToString() method to display "Candlehearth Coffee"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the coffee</returns>
         public override string ToString()
         {
             return $"{Size} Candlehearth Coffee";

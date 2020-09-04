@@ -9,6 +9,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class representing the Smokehouse Skeleton
+    /// </summary>
     public class SmokehouseSkeleton
     {
         private double price = 5.62;
@@ -29,7 +32,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// Gets whether the user customer sauasage link or not
         /// </summary>
 
-        private bool sausageLink;
+        private bool sausageLink = true;
 
         public bool SausageLink
         {
@@ -40,14 +43,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                sausageLink = true;
+                sausageLink = value;
             }
         }
 
         /// <summary>
         /// Gets whether the customer wants eggs or not
         /// </summary>
-        private bool egg;
+        private bool egg = true;
         public bool Egg
         {
             get
@@ -57,7 +60,7 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                egg = true;
+                egg = value;
             }
         }
 
@@ -65,7 +68,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets whether the customer wants hash browns or not
         /// </summary>
-        private bool hashBrowns;
+        private bool hashBrowns = true;
 
         public bool HashBrowns
         {
@@ -76,14 +79,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                hashBrowns = true;
+                hashBrowns = value;
             }
         }
 
         /// <summary>
         /// Gets whether the customer wants pancakes or not
         /// </summary>
-        private bool pancake;
+        private bool pancake = true;
 
         public bool Pancake
         {
@@ -94,13 +97,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                pancake = true;
+                pancake = value;
             }
         }
 
         /// <summary>
         /// Displays the customers special instructions
         /// </summary>
+        /// <Returns>A string list of the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get
@@ -118,7 +122,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Overrides the ToString() method to display "Smokehouse Skeleton"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the Smokehouse Skeleton</returns>
         public override string ToString()
         {
             return "Smokehouse Skeleton";

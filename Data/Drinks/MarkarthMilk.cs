@@ -8,15 +8,24 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffetData.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class representing the Markarth Milk
+    /// </summary>
     public class MarkarthMilk
     {
+        /// <summary>
+        /// Getter and setter using the Size enum
+        /// </summary>
         public Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the milk deepending on size
         /// </summary>
+        /// <exception cref="System.NotImplementedException">
+        /// Thrown if the price for the size is not known 
+        /// </exception>
         public double Price
         {
             get
@@ -31,6 +40,9 @@ namespace BleakwindBuffetData.Drinks
         /// <summary>
         /// Gtets the calories of the milk depending on size
         /// </summary>
+        /// <exception cref="System.NotImplementedException">
+        /// Thrown if the calories for the size is not known 
+        /// </exception>
         public uint Calories
         {
             get
@@ -46,7 +58,7 @@ namespace BleakwindBuffetData.Drinks
         /// <summary>
         /// Gets whether the customer wants ice or not
         /// </summary>
-        private bool ice;
+        private bool ice = false;
         public bool Ice
         {
             get
@@ -56,19 +68,20 @@ namespace BleakwindBuffetData.Drinks
 
             set
             {
-                ice = false;
+                ice = value;
             }
         }
 
         /// <summary>
         /// Displays the users special instructions
         /// </summary>
+        /// <Returns>A string list describing the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (!Ice) specialInstructions.Add("Add Ice");
+                if (!Ice) specialInstructions.Add("Add ice");
 
                 return specialInstructions;
             }
@@ -77,7 +90,7 @@ namespace BleakwindBuffetData.Drinks
         /// <summary>
         /// Overrides the ToString() method to display "Markarth Milk"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the milk</returns>
         public override string ToString()
         {
             return $"{Size} Markarth Milk";

@@ -9,6 +9,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// A class representing the Thalmor Triple
+    /// </summary>
     public class ThalmorTriple
     {
         private double price = 8.32;
@@ -30,7 +33,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// Gets whether the customer wants ketchup 
         /// </summary>
 
-        private bool ketchup;
+        private bool ketchup = true;
 
         public bool Ketchup
         {
@@ -41,14 +44,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                ketchup = true;
+                ketchup = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants a bun
         /// </summary>
-        private bool bun;
+        private bool bun = true;
 
         public bool Bun
         {
@@ -59,14 +62,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                bun = true;
+                bun = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants mustard
         /// </summary>
-        private bool mustard;
+        private bool mustard = true;
 
         public bool Mustard
         {
@@ -77,14 +80,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                mustard = true;
+                mustard = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants a pickle
         /// </summary>
-        private bool pickle;
+        private bool pickle = true;
 
         public bool Pickle
         {
@@ -95,14 +98,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                pickle = true;
+                pickle = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants cheese
         /// </summary>
-        private bool cheese;
+        private bool cheese = true;
 
         public bool Cheese
         {
@@ -113,14 +116,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                cheese = true;
+                cheese = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants tomato
         /// </summary>
-        private bool tomato;
+        private bool tomato = true;
 
         public bool Tomato
         {
@@ -131,14 +134,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                tomato = true;
+                tomato = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants lettuce
         /// </summary>
-        private bool lettuce;
+        private bool lettuce = true;
 
         public bool Lettuce
         {
@@ -149,14 +152,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                lettuce = true;
+                lettuce = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants mayo
         /// </summary>
-        private bool mayo;
+        private bool mayo = true;
 
         public bool Mayo
         {
@@ -167,14 +170,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                mayo = true;
+                mayo = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer want bacon
         /// </summary>
-        private bool bacon;
+        private bool bacon = true;
 
         public bool Bacon
         {
@@ -185,14 +188,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                bacon = true;
+                bacon = value;
             }
         }
 
         /// <summary>
         /// Gets if the customer wants eggs
         /// </summary>
-        private bool egg;
+        private bool egg = true;
 
         public bool Egg
         {
@@ -203,13 +206,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                egg = true;
+                egg = value;
             }
         }
 
         /// <summary>
         /// Displays the customers special instructions
         /// </summary>
+        /// <Returns>A string list of the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get
@@ -217,7 +221,7 @@ namespace BleakwindBuffet.Data.Entrees
                 List<string> specialInstructions = new List<string>();
                 if (!Bun)
                 {
-                    specialInstructions.Add("Hold bun.");
+                    specialInstructions.Add("Hold bun");
                 }
                 if (!Ketchup) specialInstructions.Add("Hold ketchup");
                 if (!Mustard) specialInstructions.Add("Hold mustard");
@@ -229,7 +233,6 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!Bacon) specialInstructions.Add("Hold bacon");
                 if (!Egg) specialInstructions.Add("Hold egg");
 
-
                 return specialInstructions;
             }
         }
@@ -237,7 +240,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Overrides the ToString() method to display "Thalmor Triple"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the Thalmor Triple</returns>
         public override string ToString()
         {
             return "Thalmor Triple";

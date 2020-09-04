@@ -11,6 +11,9 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// Class describing the Briarheart Buger
+    /// </summary>
     public class BriarheartBurger
     {
         private double price = 6.32;
@@ -30,7 +33,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets whether or not the customer wants ketchup
         /// </summary>
-        private bool ketchup;
+        private bool ketchup = true;
         public bool Ketchup
         {
             get
@@ -40,7 +43,7 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                ketchup = true;
+                ketchup = value;
             }
         }
 
@@ -62,7 +65,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets whether or not the customer wants a pickle
         /// </summary>
-        private bool pickle;
+        private bool pickle = true;
 
         public bool Pickle
         {
@@ -73,14 +76,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                pickle = true;
+                pickle = value;
             }
         }
 
         /// <summary>
         /// Gets whether or not the customer wants cheese
         /// </summary>
-        private bool cheese;
+        private bool cheese = true;
         public bool Cheese
         {
             get
@@ -90,13 +93,14 @@ namespace BleakwindBuffet.Data.Entrees
 
             set
             {
-                cheese = true;
+                cheese = value;
             }
         }
 
         /// <summary>
         /// If the customer has special instructions it says them here
         /// </summary>
+        /// <Returns>A string list of the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get 
@@ -104,7 +108,7 @@ namespace BleakwindBuffet.Data.Entrees
                 List<string> specialInstructions = new List<string>();
                 if (!Bun)
                 {
-                    specialInstructions.Add("Hold bun.");
+                    specialInstructions.Add("Hold bun");
                 }
                 if (!Ketchup) specialInstructions.Add("Hold ketchup");
                 if (!Mustard) specialInstructions.Add("Hold mustard");
@@ -117,7 +121,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Overrides the ToString() method to display "Briarheart Burger"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the burger</returns>
         public override string ToString()
         {
             return "Briarheart Burger";

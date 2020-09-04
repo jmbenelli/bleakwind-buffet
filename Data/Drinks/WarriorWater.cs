@@ -10,13 +10,23 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// A class describing the Warrior Water
+    /// </summary>
     public class WarriorWater
     {
+        /// <summary>
+        /// Getter and setter for size using the size enum
+        /// </summary>
         public Size Size { get; set; }
+        
 
         /// <summary>
         /// Gets the price of the water depending on size
         /// </summary>
+        /// <exception cref="System.NotImplementedException">
+        /// Thrown if the price for the size is not known 
+        /// </exception>
         public double Price
         {
             get
@@ -33,6 +43,9 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the water depending on size
         /// </summary>
+        /// <exception cref="System.NotImplementedException">
+        /// Thrown if the calories for the size is not known 
+        /// </exception>
         public uint Calories
         {
             get
@@ -48,7 +61,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets whether the customer wants ice or not
         /// </summary>
-        private bool ice;
+        private bool ice = true;
         public bool Ice
         {
             get
@@ -58,7 +71,7 @@ namespace BleakwindBuffet.Data.Drinks
 
             set
             {
-                ice = true;
+                ice = value;
             }
         }
 
@@ -82,6 +95,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Displays the customers special instructions
         /// </summary>
+        /// <Returns>A string list describing the customers special instructions</Returns>
         public List<string> SpecialInstructions
         {
             get
@@ -97,7 +111,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Overrides the ToString method to display "Warrior Water
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the water</returns>
         public override string ToString()
         {
             return $"{Size} Warrior Water";

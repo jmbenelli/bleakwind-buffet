@@ -10,13 +10,22 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class representing the Aretino Apple Juice
+    /// </summary>
     public class AretinoAppleJuice
     {
+        /// <summary>
+        /// Creates a new Size element from the size enum with a getter and setter
+        /// </summary>
         public Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the juice depending on size
         /// </summary>
+        /// <exception cref="System.NotImplementedException">
+        /// Thrown if the price for the size is not known 
+        /// </exception>
         public double Price
         {
             get
@@ -33,6 +42,9 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the juice depending on size
         /// </summary>
+        /// <exception cref="System.NotImplementedException">
+        /// Thrown if the calories for the size is not known 
+        /// </exception>
         public uint Calories
         {
             get
@@ -48,7 +60,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets if the customer wants ice or not
         /// </summary>
-        private bool ice;
+        private bool ice = false;
         public bool Ice
         {
             get
@@ -58,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
 
             set
             {
-                ice = false;
+                ice = value;
             }
         }
 
@@ -70,7 +82,7 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (!Ice) specialInstructions.Add("Add Ice");
+                if (Ice) specialInstructions.Add("Add ice");
 
                 return specialInstructions;
             }
@@ -79,7 +91,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Overrides the ToString() method to display " Aretino Apple Juice"
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A string describing the juice</returns>
         public override string ToString()
         {
             return $"{Size} Aretino Apple Juice";
