@@ -1,4 +1,9 @@
-﻿using Xunit;
+﻿/*
+* Author: Jakob Benelli
+* Class name: MenuTests.cs
+* Purpose: Class used to test the Menu class
+*/
+using Xunit;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,8 +15,14 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.DataTests.UnitTests.MenuTests
 {
+    /// <summary>
+    /// Test class for the Menu
+    /// </summary>
     public class MenuTests
     {
+        /// <summary>
+        /// Tests to see if a list of all the entrees is returned
+        /// </summary>
         [Fact]
         public void ShouldContainEntrees()
         {
@@ -24,6 +35,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.MenuTests
             Assert.Contains(Menu.Entrees(), (item) => { return item is ThugsT_Bone; });
         }
 
+        /// <summary>
+        /// Tests to see if a list of all the drinks is returned
+        /// </summary>
         [Fact] 
         public void ShouldContainDrinks()
         {
@@ -68,6 +82,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.MenuTests
             Assert.Contains(Menu.Drinks(), (item) => { return item.ToString().Equals("Large Warrior Water"); });
         }
 
+        /// <summary>
+        /// Tests to see if a list of all the sides is returned
+        /// </summary>
         [Fact]
         public void ShouldBeSides()
         {
@@ -88,6 +105,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.MenuTests
             Assert.Contains(Menu.Sides(), (item) => { return item.ToString().Equals("Large Vokun Salad"); });
         }
 
+        /// <summary>
+        /// Tests to see if a full menu list is returned
+        /// </summary>
         [Fact]
         public void ShouldBeFullMenu()
         {

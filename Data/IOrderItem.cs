@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Jakob Benelli
+* Class name: IOrderItem.cs
+* Purpose: Class used to create the IOrderItem interface
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 

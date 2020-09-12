@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Jakob Benelli
+* Class name: Side.cs
+* Purpose: Class used to create the base class for sides
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;

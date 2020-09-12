@@ -1,4 +1,9 @@
-﻿using BleakwindBuffet.Data.Entrees;
+﻿/*
+* Author: Jakob Benelli
+* Class name: Menu.cs
+* Purpose: Class used to create the full menu
+*/
+using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Drinks;
 using System;
