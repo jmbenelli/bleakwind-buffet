@@ -13,12 +13,8 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class representing the Vokun Salad
     /// </summary>
-    public class VokunSalad
+    public class VokunSalad : Side
     {
-        /// <summary>
-        /// Getter and setter for size using the size enum
-        /// </summary>
-        public Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the salad depending on size
@@ -26,7 +22,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the price for the size is not known 
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -45,7 +41,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the price for the size is not known 
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

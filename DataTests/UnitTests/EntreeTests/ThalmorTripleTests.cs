@@ -16,6 +16,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class ThalmorTripleTests
     {
         /// <summary>
+        /// Checks to see if the IOrderInterface Class is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderInterfaceClass()
+        {
+            ThalmorTriple t = new ThalmorTriple();
+            Assert.IsAssignableFrom<IOrderItem>(t);
+        }
+
+        /// <summary>
+        /// Checks to see if the it is an Entree
+        /// </summary>
+        [Fact]
+        public void ShouldBeEntree()
+        {
+            ThalmorTriple t = new ThalmorTriple();
+            Assert.IsAssignableFrom<Entree>(t);
+        }
+
+        /// <summary>
         /// Checks to see if the boolean value for bun is true by default
         /// </summary>
         [Fact]

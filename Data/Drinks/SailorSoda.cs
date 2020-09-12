@@ -13,12 +13,8 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class describing the Sailor Soda
     /// </summary>
-    public class SailorSoda
+    public class SailorSoda : Drink, IOrderItem
     {
-        /// <summary>
-        /// Getter and Setter for size using the size enum
-        /// </summary>
-        public Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the soda depending on the size
@@ -26,7 +22,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the price for the size is not known 
         /// </exception>
-        public double Price
+        public override double Price
         {
             get 
             {
@@ -43,7 +39,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the calories for the size is not known 
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -58,7 +54,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets whether the customer wants ice or not
         /// </summary>
-        private bool ice;
+        private bool ice = true;
         public bool Ice
         {
             get
@@ -68,7 +64,7 @@ namespace BleakwindBuffet.Data.Drinks
 
             set
             {
-                ice = true;
+                ice = value;
             }
         }
 
@@ -76,7 +72,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the flavor the customer wants
         /// </summary>
-        private SodaFlavor flavor;
+        private SodaFlavor flavor = SodaFlavor.Cherry;
         public SodaFlavor Flavor
         {
             get
@@ -85,7 +81,7 @@ namespace BleakwindBuffet.Data.Drinks
             }
             set
             {
-                Flavor = SodaFlavor.Cherry;
+                flavor = value;
             }
             
         }
@@ -94,12 +90,12 @@ namespace BleakwindBuffet.Data.Drinks
         /// Displays the customers special instructions
         /// </summary>
         /// <Returns>A string list describing the customers special instructions</Returns>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
                 List<string> specialInstructions = new List<string>();
-                if (!Ice) specialInstructions.Add("Hold Ice");
+                if (!Ice) specialInstructions.Add("Hold ice");
 
                 return specialInstructions;
             }

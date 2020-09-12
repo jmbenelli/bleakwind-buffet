@@ -12,11 +12,31 @@ using BleakwindBuffet.Data.Drinks;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
+
     /// <summary>
     /// Test class for the Warrior Water
     /// </summary>
     public class WarriorWaterTests
     {
+        /// <summary>
+        /// Checks to see if the IOrderInterface Class is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderInterfaceClass()
+        {
+            WarriorWater w = new WarriorWater();
+            Assert.IsAssignableFrom<IOrderItem>(w);
+        }
+
+        /// <summary>
+        /// Checks to see if it is a drink
+        /// </summary>
+        [Fact]
+        public void ShouldBeDrink()
+        {
+            WarriorWater w = new WarriorWater();
+            Assert.IsAssignableFrom<Drink>(w);
+        }
         /// <summary>
         /// Checks to see if the boolean value of ice is set to true by default
         /// </summary>

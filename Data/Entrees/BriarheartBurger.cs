@@ -14,13 +14,13 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Class describing the Briarheart Buger
     /// </summary>
-    public class BriarheartBurger
+    public class BriarheartBurger : Entree, IOrderItem
     {
         private double price = 6.32;
         /// <summary>
         /// Gets the price of the burger
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return price; }
         }
@@ -28,7 +28,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Gets the calories
         /// </summary>
-        public uint Calories => 743;
+        public override uint Calories => 743;
 
         /// <summary>
         /// Gets whether or not the customer wants ketchup
@@ -101,7 +101,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// If the customer has special instructions it says them here
         /// </summary>
         /// <Returns>A string list of the customers special instructions</Returns>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get 
             {

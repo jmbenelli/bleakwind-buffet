@@ -13,19 +13,15 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class representing the Mad Otar Grits
     /// </summary>
-    public class MadOtarGrits
+    public class MadOtarGrits : Side
     {
-        /// <summary>
-        /// Getter and setter for the size using the size enum
-        /// </summary>
-        public Size Size { get; set; }
         /// <summary>
         /// Gets the price of the grits depending on size
         /// </summary>
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the price for the size is not known 
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -44,7 +40,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the calories for the size is not known 
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

@@ -13,19 +13,15 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class representing hte Dragonborn Waffle Fries
     /// </summary>
-    public class DragonbornWaffleFries
+    public class DragonbornWaffleFries : Side
     {
-        /// <summary>
-        /// Getter and setter using the size enum
-        /// </summary>
-        public Size Size { get; set; }
         /// <summary>
         /// Used to get the price of the fries depending on size
         /// </summary>
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the price for the size is not known 
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -42,7 +38,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the calories for the size is not known 
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

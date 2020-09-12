@@ -19,6 +19,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class SailorSodaTests
     {
         /// <summary>
+        /// Checks to see if the IOrderInterface Class is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderInterfaceClass()
+        {
+            SailorSoda s = new SailorSoda();
+            Assert.IsAssignableFrom<IOrderItem>(s);
+        }
+
+        /// <summary>
+        /// Checks to see if it is a drink
+        /// </summary>
+        [Fact]
+        public void ShouldBeDrink()
+        {
+            SailorSoda s = new SailorSoda();
+            Assert.IsAssignableFrom<Drink>(s);
+        }
+
+        /// <summary>
         /// Checks to see if the boolean value for ice is set to true by default
         /// </summary>
         [Fact]
@@ -136,11 +156,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Theory]
         [InlineData(true)]
         [InlineData(false)]
+
         public void ShouldHaveCorrectSpecialInstructions(bool includeIce)
         {
             SailorSoda s = new SailorSoda();
             s.Ice = includeIce;
-            if (includeIce) Assert.Contains("Add ice", s.SpecialInstructions);
+            if (!includeIce) Assert.Contains("Hold ice", s.SpecialInstructions);
             else Assert.Empty(s.SpecialInstructions);
         }
         

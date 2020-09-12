@@ -16,6 +16,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class BriarheartBurgerTests
     {
         /// <summary>
+        /// Checks to see if the IOrderInterface Class is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderInterfaceClass()
+        {
+            BriarheartBurger b = new BriarheartBurger();
+            Assert.IsAssignableFrom<IOrderItem>(b);
+        }
+
+        /// <summary>
+        /// Checks to see if the it is an Entree
+        /// </summary>
+        [Fact]
+        public void ShouldBeEntree()
+        {
+            BriarheartBurger b = new BriarheartBurger();
+            Assert.IsAssignableFrom<Entree>(b);
+        }
+
+        /// <summary>
         /// Checks to see if the boolean value for bun is set to true by default
         /// </summary>
         [Fact]

@@ -13,12 +13,8 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the Markarth Milk
     /// </summary>
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink, IOrderItem
     {
-        /// <summary>
-        /// Getter and setter using the Size enum
-        /// </summary>
-        public Size Size { get; set; }
 
         /// <summary>
         /// Gets the price of the milk deepending on size
@@ -26,7 +22,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the price for the size is not known 
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -43,7 +39,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the calories for the size is not known 
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -76,7 +72,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Displays the users special instructions
         /// </summary>
         /// <Returns>A string list describing the customers special instructions</Returns>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

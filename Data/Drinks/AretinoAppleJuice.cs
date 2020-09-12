@@ -13,12 +13,9 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing the Aretino Apple Juice
     /// </summary>
-    public class AretinoAppleJuice
+    public class AretinoAppleJuice : Drink, IOrderItem
     {
-        /// <summary>
-        /// Creates a new Size element from the size enum with a getter and setter
-        /// </summary>
-        public Size Size { get; set; }
+        
 
         /// <summary>
         /// Gets the price of the juice depending on size
@@ -26,7 +23,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the price for the size is not known 
         /// </exception>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -45,7 +42,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <exception cref="System.NotImplementedException">
         /// Thrown if the calories for the size is not known 
         /// </exception>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -77,7 +74,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Displays the customers special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

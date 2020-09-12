@@ -14,7 +14,27 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     /// Test class for the Double Draugr
     /// </summary>
     public class DoubleDraugrTests
-    {   
+    {
+        /// <summary>
+        /// Checks to see if the IOrderInterface Class is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderInterfaceClass()
+        {
+            DoubleDraugr d = new DoubleDraugr();
+            Assert.IsAssignableFrom<IOrderItem>(d);
+        }
+
+        /// <summary>
+        /// Checks to see if the it is an Entree
+        /// </summary>
+        [Fact]
+        public void ShouldBeEntree()
+        {
+            DoubleDraugr d = new DoubleDraugr();
+            Assert.IsAssignableFrom<Entree>(d);
+        }
+
         /// <summary>
         /// Checks to see if the boolean value for bun is set to true by default
         /// </summary>

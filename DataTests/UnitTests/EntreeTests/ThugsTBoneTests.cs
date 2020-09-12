@@ -16,6 +16,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class ThugsTBoneTests
     {
         /// <summary>
+        /// Checks to see if the IOrderInterface Class is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderInterfaceClass()
+        {
+            ThugsT_Bone t = new ThugsT_Bone();
+            Assert.IsAssignableFrom<IOrderItem>(t);
+        }
+
+        /// <summary>
+        /// Checks to see if the it is an Entree
+        /// </summary>
+        [Fact]
+        public void ShouldBeEntree()
+        {
+            ThugsT_Bone t = new ThugsT_Bone();
+            Assert.IsAssignableFrom<Entree>(t);
+        }
+
+        /// <summary>
         /// Checks to see if the correct price is returned
         /// </summary>
         [Fact]

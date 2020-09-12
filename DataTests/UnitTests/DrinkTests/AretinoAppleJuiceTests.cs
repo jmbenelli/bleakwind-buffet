@@ -18,6 +18,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class AretinoAppleJuiceTests
     {
         /// <summary>
+        /// Checks to see if the IOrderInterface Class is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldBeAssignableToAbstractIOrderInterfaceClass()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+        }
+
+        /// <summary>
+        /// Checks to see if it is a drink
+        /// </summary>
+        [Fact]
+        public void ShouldBeDrink()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<Drink>(aj);
+        }
+
+        /// <summary>
         /// This checks if the the ice is set to false by default
         /// </summary>
         [Fact]
