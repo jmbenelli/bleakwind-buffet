@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="PointOfSale.CustomizeDrinks.CustomizeCandlehearthCoffee"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizeDrinks"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900">
+    <Grid Background="Beige">
+        <StackPanel>
+            <TextBlock TextAlignment="Center" FontSize="50"><Run Text="Please Select Preferences"/></TextBlock>
+            <ComboBox Height="100" Margin="100, 50">
+                <ComboBoxItem FontSize ="40">Small</ComboBoxItem>
+                <ComboBoxItem FontSize ="40">Medium</ComboBoxItem>
+                <ComboBoxItem FontSize ="40">Large</ComboBoxItem>
+            </ComboBox>
+            <CheckBox FontSize ="40" Margin="100, 10">Ice</CheckBox>
+            <CheckBox FontSize ="40" Margin="100, 10">Room For Cream</CheckBox>
+            <CheckBox FontSize ="40" Margin="100, 10">Decaf</CheckBox>
+        </StackPanel>
+        <Button FontSize="80" Height="150" Width="300" Margin="546,408,54,42" Click="Button_Click">Done</Button>
+    </Grid>
+</UserControl>
