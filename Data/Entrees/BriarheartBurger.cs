@@ -3,19 +3,20 @@
 * Class name: BriarheartBuger.cs
 * Purpose: Class representing the Briarheart Buger. It is a Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.
 */
-
-
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class describing the Briarheart Buger
     /// </summary>
-    public class BriarheartBurger : Entree, IOrderItem
+    public class BriarheartBurger : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private double price = 6.32;
         /// <summary>
         /// Gets the price of the burger
@@ -44,13 +45,27 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 ketchup = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
             }
         }
 
         /// <summary>
         /// Gets whther or not the customer wants a bun
         /// </summary>
-        public bool Bun { get; set; } = true;
+        private bool bun = true;
+        public bool Bun
+        {
+            get
+            {
+                return bun;
+            }
+
+            set
+            {
+                bun = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+            }
+        }
 
         /// <summary>
         /// Gets whether or not the customer wants mustard
@@ -58,8 +73,16 @@ namespace BleakwindBuffet.Data.Entrees
         private bool mustard = true;
         public bool Mustard 
         {
-            get => mustard;
-            set => mustard = value;
+            get
+            {
+                return mustard;
+            }
+
+            set
+            {
+                mustard = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+            }
         }
 
         /// <summary>
@@ -77,6 +100,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
             }
         }
 
@@ -94,6 +118,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+
             }
         }
 

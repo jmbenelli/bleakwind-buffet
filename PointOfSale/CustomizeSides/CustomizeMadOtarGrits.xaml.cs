@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: Jakob Benelli
+* Class name: CustomizeMadOtarGrits.cs
+* Purpose: Class used to create the Customization for the Mad Otar Grits XAML
+*/
+using BleakwindBuffet.Data.Sides;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,18 +24,42 @@ namespace PointOfSale.CustomizeSides
     /// </summary>
     public partial class CustomizeMadOtarGrits : UserControl
     {
+        /// <summary>
+        /// Gets and sets Main Window mw
+        /// </summary>
         public MainWindow mw
         {
             get; set;
         }
 
+        /// <summary>
+        /// Constructor that initializes the customization component
+        /// </summary>
+        /// <param name="m">Main Window m</param>
         public CustomizeMadOtarGrits(MainWindow m)
         {
             InitializeComponent();
             mw = m;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Swaps screen to the main window when clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Done_Click(object sender, RoutedEventArgs e)
+        {
+            mw.SwapScreen(new MenuComponent(mw));
+            MadOtarGrits m = new MadOtarGrits();
+            this.DataContext = m;
+        }
+
+        /// <summary>
+        /// Swaps screen to the main window when clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             mw.SwapScreen(new MenuComponent(mw));
         }

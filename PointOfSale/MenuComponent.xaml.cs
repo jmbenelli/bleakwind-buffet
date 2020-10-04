@@ -1,4 +1,9 @@
-﻿using PointOfSale.CustoizeDrinks;
+﻿/*
+* Author: Jakob Benelli
+* Class name: MenuComponent.cs
+* Purpose: Class used to create the Menu Componenet XAML
+*/
+using PointOfSale.CustoizeDrinks;
 using PointOfSale.CustomizeDrinks;
 using PointOfSale.CustomizeEntrees;
 using PointOfSale.CustomizeSides;
@@ -22,11 +27,18 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuComponent : UserControl
     {
+        /// <summary>
+        /// Gets and Sets a new MainWindown mw
+        /// </summary>
         public MainWindow mw
         {
             get; set;
         }
 
+        /// <summary>
+        /// Constructor that initializes the Menu component
+        /// </summary>
+        /// <param name="m">Main Window m</param>
         public MenuComponent(MainWindow m)
         {
             InitializeComponent();

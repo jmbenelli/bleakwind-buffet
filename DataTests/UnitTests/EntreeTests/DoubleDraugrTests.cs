@@ -285,5 +285,135 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             DoubleDraugr d = new DoubleDraugr();
             Assert.Equal("Double Draugr", d.ToString());
         }
+
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            var b = new DoubleDraugr();
+
+            Assert.PropertyChanged(b, "Ketchup", () =>
+            {
+                b.Ketchup = true;
+            });
+
+            Assert.PropertyChanged(b, "Ketchup", () =>
+            {
+                b.Ketchup = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            var b = new DoubleDraugr();
+
+            Assert.PropertyChanged(b, "Bun", () =>
+            {
+                b.Bun = true;
+            });
+
+            Assert.PropertyChanged(b, "Bun", () =>
+            {
+                b.Bun = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            var b = new DoubleDraugr();
+
+            Assert.PropertyChanged(b, "Mustard", () =>
+            {
+                b.Mustard= true;
+            });
+
+            Assert.PropertyChanged(b, "Mustard", () =>
+            {
+                b.Mustard = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            var b = new DoubleDraugr();
+
+            Assert.PropertyChanged(b, "Pickle", () =>
+            {
+                b.Pickle = true;
+            });
+
+            Assert.PropertyChanged(b, "Pickle", () =>
+            {
+                b.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            var b = new DoubleDraugr();
+
+            Assert.PropertyChanged(b, "Cheese", () =>
+            {
+                b.Cheese = true;
+            });
+
+            Assert.PropertyChanged(b, "Cheese", () =>
+            {
+                b.Cheese = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            var b = new DoubleDraugr();
+
+            Assert.PropertyChanged(b, "Tomato", () =>
+            {
+                b.Tomato = true;
+            });
+
+            Assert.PropertyChanged(b, "Tomato", () =>
+            {
+                b.Tomato = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingLettuceNotifiesLettuceProperty()
+        {
+            var b = new DoubleDraugr();
+
+            Assert.PropertyChanged(b, "Lettuce", () =>
+            {
+                b.Lettuce = true;
+            });
+
+            Assert.PropertyChanged(b, "Lettuce", () =>
+            {
+                b.Lettuce = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingMayopNotifiesMayoProperty()
+        {
+            var b = new DoubleDraugr();
+
+            Assert.PropertyChanged(b, "Mayo", () =>
+            {
+                b.Mayo = true;
+            });
+
+            Assert.PropertyChanged(b, "Mayo", () =>
+            {
+                b.Mayo = false;
+            });
+        }
+
+
     }
 }

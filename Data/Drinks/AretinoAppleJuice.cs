@@ -7,15 +7,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
+using System.Xml.Schema;
+using BleakwindBuffet.Data.Entrees;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// Class representing the Aretino Apple Juice
     /// </summary>
-    public class AretinoAppleJuice : Drink, IOrderItem
+    public class AretinoAppleJuice : Drink, IOrderItem, INotifyPropertyChanged
     {
-        
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the price of the juice depending on size
@@ -32,8 +35,6 @@ namespace BleakwindBuffet.Data.Drinks
                 if (Size == Size.Large) return 1.01;
                 throw new NotImplementedException($"Unknown size of {Size}");
             }
-
-
         }
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace BleakwindBuffet.Data.Drinks
 
         }
 
+        private Size s = Size.Small;
+        /// <summary>
+        /// Overrides the Size property and invokes the property change when the size is changed
+        /// </summary>
+        public override Size Size { 
+            get
+            {
+                return s;
+            }
+            set
+            {
+                s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
+
+
         /// <summary>
         /// Gets if the customer wants ice or not
         /// </summary>
@@ -68,6 +88,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 

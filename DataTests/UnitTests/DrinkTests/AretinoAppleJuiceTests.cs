@@ -148,5 +148,63 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             aj.Size = size;
             Assert.Equal(name, aj.ToString());
         }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var s = new AretinoAppleJuice();
+
+            Assert.PropertyChanged(s, "Ice", () =>
+            {
+                s.Ice = true;
+            });
+
+            Assert.PropertyChanged(s, "Ice", () =>
+            {
+                s.Ice = false;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeNotifiesSizeProperty(Size s)
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.PropertyChanged(a, "Size", () =>
+            {
+                a.Size = s;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeNotifiesPriceProperty(Size s)
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.PropertyChanged(a, "Price", () =>
+            {
+                a.Size = s;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeNotifiesCaloriesProperty(Size s)
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.PropertyChanged(a, "Calories", () =>
+            {
+                a.Size = s;
+            });
+        }
+
+
+
     }
 }

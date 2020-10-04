@@ -6,14 +6,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
+
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// The class representing the Garden Orc Omelette
     /// </summary>
-    public class GardenOrcOmelette : Entree, IOrderItem
+    public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private double price = 4.57;
         /// <summary>
         /// Gets the price of the omelette
@@ -42,6 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 broccoli = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
             }
         }
 
@@ -59,6 +64,8 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 mushrooms = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+
             }
         }
 
@@ -76,6 +83,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
             }
         }
 
@@ -93,6 +101,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 cheddar = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
             }
         }
 

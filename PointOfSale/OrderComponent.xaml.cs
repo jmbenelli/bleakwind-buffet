@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Jakob Benelli
+* Class name: MainWindow.cs
+* Purpose: Class used to create the Order Component XAML
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+        /// <summary>
+        /// Constructor that Initializes the Order Component
+        /// </summary>
         public OrderComponent()
         {
             InitializeComponent();

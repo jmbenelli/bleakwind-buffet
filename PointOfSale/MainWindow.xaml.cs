@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+* Author: Jakob Benelli
+* Class name: MainWindow.cs
+* Purpose: Class used to create the Main Window XAML
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +25,9 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Constructor that initializes the Main Window Compoennt that has a Menu Component
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -27,6 +35,10 @@ namespace PointOfSale
             border.Child = b;
         }
          
+        /// <summary>
+        /// This method swaps screens between the customization screens and the menu component screens
+        /// </summary>
+        /// <param name="f"></param>
         public void SwapScreen(FrameworkElement f)
         {
             border.Child = f;

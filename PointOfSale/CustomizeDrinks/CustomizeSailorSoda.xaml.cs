@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: Jakob Benelli
+* Class name: CustomizeSailorSoda.cs
+* Purpose: Class used to create the Customization for the SailorSoda XAML
+*/
+using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,18 +24,42 @@ namespace PointOfSale.CustoizeDrinks
     /// </summary>
     public partial class CustomizeSailorSoda : UserControl
     {
+        /// <summary>
+        /// Gets and Sets the Main Window mw
+        /// </summary>
         public MainWindow mw
         {
             get; set;
         }
 
+        /// <summary>
+        /// Constructor that initializes teh customization component
+        /// </summary>
+        /// <param name="m">Main Window m</param>
         public CustomizeSailorSoda(MainWindow m)
         {
             InitializeComponent();
             mw = m;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Swaps screen to the main window when clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Done_Click(object sender, RoutedEventArgs e)
+        {
+            mw.SwapScreen(new MenuComponent(mw));
+            SailorSoda s = new SailorSoda();
+            this.DataContext = s;
+        }
+
+        /// <summary>
+        /// Swaps screen to the main window when clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             mw.SwapScreen(new MenuComponent(mw));
         }

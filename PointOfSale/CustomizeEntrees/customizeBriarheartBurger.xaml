@@ -15,6 +15,7 @@
             <CheckBox FontSize="40" Margin="100, 10">Pickle</CheckBox>
             <CheckBox FontSize="40" Margin="100, 10">Cheese</CheckBox>
         </StackPanel>
-        <Button FontSize="80" Height="150" Width="300" Margin="546,408,54,42" Click="Button_Click">Done</Button>
+        <Button Name="DoneButton"  FontSize="80" Height="150" Width="300" Margin="546,408,54,42" Click="Done_Click">Done</Button>
+        <Button FontSize="35" Height="75" Width=" 150" Margin="375,483,375,42" Click="Cancel_Click">Cancel</Button>
     </Grid>
 </UserControl>

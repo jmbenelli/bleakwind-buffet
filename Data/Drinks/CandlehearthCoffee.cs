@@ -7,14 +7,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// Class Representing the Candlehearth Coffee
     /// </summary>
-    public class CandlehearthCoffee : Drink, IOrderItem
+    public class CandlehearthCoffee : Drink, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the price of the coffee depending on size
@@ -51,6 +53,25 @@ namespace BleakwindBuffet.Data.Drinks
 
         }
 
+        private Size s = Size.Small;
+        /// <summary>
+        /// Overrides the Size property and invokes the property change when the size is changed
+        /// </summary>
+        public override Size Size
+        {
+            get
+            {
+                return s;
+            }
+            set
+            {
+                s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
+
         /// <summary>
         /// Gets whether the customer wants ice or not
         /// </summary>
@@ -65,6 +86,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -83,6 +106,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Room For Cream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 
@@ -100,6 +125,8 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 

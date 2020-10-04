@@ -202,5 +202,96 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             s.Size = size;
             Assert.Equal(name, s.ToString());
         }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var s = new SailorSoda();
+
+            Assert.PropertyChanged(s, "Ice", () =>
+            {
+                s.Ice = true;
+            });
+
+            Assert.PropertyChanged(s, "Ice", () =>
+            {
+                s.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingFlavorNotifiesFlavorProperty()
+        {
+            var s = new SailorSoda();
+
+            Assert.PropertyChanged(s, "Flavor", () =>
+            {
+                s.Flavor = SodaFlavor.Cherry;
+            });
+
+            Assert.PropertyChanged(s, "Flavor", () =>
+            {
+                s.Flavor = SodaFlavor.Blackberry;
+            });
+
+            Assert.PropertyChanged(s, "Flavor", () =>
+            {
+                s.Flavor = SodaFlavor.Grapefruit;
+            });
+
+            Assert.PropertyChanged(s, "Flavor", () =>
+            {
+                s.Flavor = SodaFlavor.Lemon;
+            });
+
+            Assert.PropertyChanged(s, "Flavor", () =>
+            {
+                s.Flavor = SodaFlavor.Peach;
+            });
+
+            Assert.PropertyChanged(s, "Flavor", () =>
+            {
+                s.Flavor = SodaFlavor.Watermelon;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeNotifiesSizeProperty(Size s)
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            Assert.PropertyChanged(a, "Size", () =>
+            {
+                a.Size = s;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeNotifiesPriceProperty(Size s)
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            Assert.PropertyChanged(a, "Price", () =>
+            {
+                a.Size = s;
+            });
+        }
+
+        [Theory]
+        [InlineData(Size.Small)]
+        [InlineData(Size.Medium)]
+        [InlineData(Size.Large)]
+        public void SizeChangeNotifiesCaloriesProperty(Size s)
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            Assert.PropertyChanged(a, "Calories", () =>
+            {
+                a.Size = s;
+            });
+        }
     }
 }

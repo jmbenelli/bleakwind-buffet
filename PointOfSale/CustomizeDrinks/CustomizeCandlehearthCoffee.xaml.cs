@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+* Author: Jakob Benelli
+* Class name: CustomizeCandleHearthCoffee.cs
+* Purpose: Class used to create the Customization for the Candlehearth Coffee XAML
+*/
+using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,18 +24,42 @@ namespace PointOfSale.CustomizeDrinks
     /// </summary>
     public partial class CustomizeCandlehearthCoffee : UserControl
     {
+        /// <summary>
+        /// Gets and sets the Main Window mw
+        /// </summary>
         public MainWindow mw
         {
             get; set;
         }
 
+        /// <summary>
+        /// Constructor that initializes teh customization component
+        /// </summary>
+        /// <param name="m">Main Window m</param>
         public CustomizeCandlehearthCoffee(MainWindow m)
         {
             InitializeComponent();
             mw = m;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Swaps screen to the main window when clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Done_Click(object sender, RoutedEventArgs e)
+        {
+            mw.SwapScreen(new MenuComponent(mw));
+            CandlehearthCoffee c = new CandlehearthCoffee;
+            this.DataContext = c;
+        }
+
+        /// <summary>
+        /// Swaps screen to the main window when clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             mw.SwapScreen(new MenuComponent(mw));
         }

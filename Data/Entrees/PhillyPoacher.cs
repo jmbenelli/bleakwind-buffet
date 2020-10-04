@@ -7,14 +7,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class representing the Philly Poacher
     /// </summary>
-    public class PhillyPoacher : Entree, IOrderItem
+    public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private double price = 7.23;
         /// <summary>
         /// Gets the price of the Cheesesteak
@@ -43,6 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 sirloin = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
             }
         }
 
@@ -60,6 +64,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 onion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
             }
         }
 
@@ -77,6 +82,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 roll = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
             }
         }
 

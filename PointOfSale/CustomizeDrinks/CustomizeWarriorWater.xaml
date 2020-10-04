@@ -9,7 +9,7 @@
     <Grid Background="Beige">
         <StackPanel>
             <TextBlock TextAlignment="Center" FontSize="50"><Run Text="Please Select Preferences"/></TextBlock>
-            <ComboBox Height="100" Margin="100, 30">
+            <ComboBox FontSize="50" Height="100" Margin="100, 30">
                 <ComboBoxItem FontSize ="40">Small</ComboBoxItem>
                 <ComboBoxItem FontSize ="40">Medium</ComboBoxItem>
                 <ComboBoxItem FontSize ="40">Large</ComboBoxItem>
@@ -17,6 +17,7 @@
             <CheckBox FontSize ="40" Margin="100, 10">Ice</CheckBox>
             <CheckBox FontSize ="40" Margin="100, 10">Lemon</CheckBox>
         </StackPanel>
-        <Button FontSize="80" Height="150" Width="300" Margin="546,408,54,42" Click="Button_Click">Done</Button>
+        <Button FontSize="80" Height="150" Width="300" Margin="546,408,54,42" Click="Done_Click">Done</Button>
+        <Button FontSize="35" Height="75" Width=" 150" Margin="375,483,375,42" Click="Cancel_Click">Cancel</Button>
     </Grid>
 </UserControl>

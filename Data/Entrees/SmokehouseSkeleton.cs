@@ -6,14 +6,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Class representing the Smokehouse Skeleton
     /// </summary>
-    public class SmokehouseSkeleton : Entree, IOrderItem
+    public class SmokehouseSkeleton : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private double price = 5.62;
         /// <summary>
         /// Gets the price of the smokehouse skeleton
@@ -44,6 +47,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 sausageLink = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sausage Link"));
             }
         }
 
@@ -61,6 +65,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 egg = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
             }
         }
 
@@ -80,6 +85,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 hashBrowns = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Hash Browns"));
             }
         }
 
@@ -98,6 +104,7 @@ namespace BleakwindBuffet.Data.Entrees
             set
             {
                 pancake = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pancake"));
             }
         }
 
