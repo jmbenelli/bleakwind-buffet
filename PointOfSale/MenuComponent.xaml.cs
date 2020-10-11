@@ -3,6 +3,7 @@
 * Class name: MenuComponent.cs
 * Purpose: Class used to create the Menu Componenet XAML
 */
+using BleakwindBuffet.Data.Entrees;
 using PointOfSale.CustoizeDrinks;
 using PointOfSale.CustomizeDrinks;
 using PointOfSale.CustomizeEntrees;

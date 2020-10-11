@@ -13,8 +13,10 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing Thugs T-Bone
     /// </summary>
-    public class ThugsT_Bone : Entree, IOrderItem
+    public class ThugsT_Bone : Entree, IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private double price = 6.44;
         /// <summary>
         /// Gets the price of the T-Bone

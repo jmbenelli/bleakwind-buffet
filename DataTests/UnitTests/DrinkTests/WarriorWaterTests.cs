@@ -8,7 +8,7 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
-
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -204,6 +204,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             {
                 a.Size = s;
             });
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var c = new WarriorWater();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
     }
 }

@@ -12,6 +12,6 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Border Name="border" Grid.Column="0"></Border>
-        <local:OrderComponent Grid.Column="1"></local:OrderComponent>
+        <local:OrderComponent x:Name="OrderComponent" Grid.Column="1"/>
     </Grid>
 </Window>

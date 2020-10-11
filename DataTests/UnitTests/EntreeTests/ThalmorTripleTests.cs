@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -450,6 +451,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             {
                 s.Lettuce = false;
             });
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var c = new ThalmorTriple();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
     }
 }

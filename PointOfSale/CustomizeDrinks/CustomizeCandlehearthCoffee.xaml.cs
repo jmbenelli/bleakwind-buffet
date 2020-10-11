@@ -50,7 +50,7 @@ namespace PointOfSale.CustomizeDrinks
         private void Done_Click(object sender, RoutedEventArgs e)
         {
             mw.SwapScreen(new MenuComponent(mw));
-            CandlehearthCoffee c = new CandlehearthCoffee;
+            CandlehearthCoffee c = new CandlehearthCoffee();
             this.DataContext = c;
         }
 

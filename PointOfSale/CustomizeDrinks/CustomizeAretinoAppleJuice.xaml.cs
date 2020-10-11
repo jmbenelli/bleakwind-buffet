@@ -50,7 +50,7 @@ namespace PointOfSale.CustomizeDrinks
         private void Done_Click(object sender, RoutedEventArgs e)
         {
             mw.SwapScreen(new MenuComponent(mw));
-            AretinoAppleJuice a = new AretinoAppleJuice;
+            AretinoAppleJuice a = new AretinoAppleJuice();
             this.DataContext = a;
         }
 

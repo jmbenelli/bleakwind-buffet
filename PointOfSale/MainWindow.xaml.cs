@@ -3,6 +3,7 @@
 * Class name: MainWindow.cs
 * Purpose: Class used to create the Main Window XAML
 */
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace PointOfSale
             InitializeComponent();
             MenuComponent b = new MenuComponent(this);
             border.Child = b;
+            OrderComponent.DataContext = new Order();
         }
          
         /// <summary>

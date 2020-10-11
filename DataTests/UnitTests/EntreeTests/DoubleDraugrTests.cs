@@ -7,6 +7,7 @@ using Xunit;
 
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
@@ -412,6 +413,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             {
                 b.Mayo = false;
             });
+        }
+
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var c = new DoubleDraugr();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
 
 

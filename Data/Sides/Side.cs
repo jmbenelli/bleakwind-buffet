@@ -15,8 +15,10 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class representing the common properties for a Side
     /// </summary>
-    public abstract class Side: IOrderItem
+    public abstract class Side: IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The size of the side
         /// </summary>
