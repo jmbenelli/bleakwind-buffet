@@ -20,16 +20,13 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.ColumnSpan="2" Grid.Row="0" TextAlignment="Center" FontSize="30">Order #</TextBlock>
-        <ListView Grid.ColumnSpan="2" Grid.Row="1" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Path=Order}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <TextBlock Grid.ColumnSpan="2" FontSize="25" Grid.Row="2">Subtotal:</TextBlock>
-        <TextBlock Grid.ColumnSpan="2" FontSize="25" Grid.Row="3">Tax:</TextBlock>
-        <TextBlock Grid.ColumnSpan="2" FontSize="25" Grid.Row="4">Total: </TextBlock>
+        <ListView Grid.ColumnSpan="2" Grid.Row="1" ItemsSource="{Binding}"/>
+        <TextBlock FontSize="25" Grid.Row="2">Subtotal:</TextBlock>
+        <TextBlock TextAlignment="Right" FontSize="25" Grid.Row="2" Grid.Column="1" Text="{Binding Path=SubTotal}"/>
+        <TextBlock FontSize="25" Grid.Row="3">Tax:</TextBlock>
+        <TextBlock TextAlignment="Right" FontSize="25" Grid.Row="3" Grid.Column="1" Text="{Binding Path=Tax}"/>
+        <TextBlock FontSize="25" Grid.Row="4">Total: </TextBlock>
+        <TextBlock TextAlignment="Right" FontSize="25" Grid.Row="4" Grid.Column="1" Text="{Binding Path=Total}"/>
         <Button FontSize="25" Grid.Row="5" Grid.Column="0">Done</Button>
         <Button FontSize="25" Grid.Row="5" Grid.Column="1">Cancel</Button>
     </Grid>

@@ -3,6 +3,7 @@
 * Class name: MainWindow.cs
 * Purpose: Class used to create the Order Component XAML
 */
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,6 +30,8 @@ namespace PointOfSale
         public OrderComponent()
         {
             InitializeComponent();
+            Order o = new Order();
+            DataContext = o;
         }
 
     }
