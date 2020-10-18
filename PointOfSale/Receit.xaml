@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="PointOfSale.Receit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition  Height="400"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock VerticalAlignment="Top" TextAlignment="Center" FontSize="20" Grid.ColumnSpan="2">Receit</TextBlock>
+        <TextBlock Grid.Row="1" FontSize="20">Order Number:</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Number}"></TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="2" FontSize="20">Date:</TextBlock>
+        <ListView Grid.Row="3" Grid.ColumnSpan="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ListView>
+                        <TextBlock FontSize="20" Text="{Binding}"/>
+                        <ListBox ItemsSource="{Binding Path=SpecialInstructions}"/>
+                    </ListView>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Grid.Row="4" FontSize="20">Subtotal:</TextBlock>
+        <TextBlock Grid.Row="4" FontSize="20" Grid.Column="1" Text="{Binding Path=SubTotal, StringFormat=c}"/>
+        <TextBlock Grid.Row="5" FontSize="20">Tax:</TextBlock>
+        <TextBlock Grid.Row="5" FontSize="20" Grid.Column="1" Text="{Binding Path=Tax,StringFormat=c}"/>
+        <TextBlock Grid.Row="6" FontSize="20">Total:</TextBlock>
+        <TextBlock Grid.Row="6" FontSize="20" Grid.Column="1" Text="{Binding Path=Total, StringFormat=c}"/>
+        <TextBlock Grid.Row="7" FontSize="20">Payment Method:</TextBlock>
+        <TextBlock Grid.Row="7" FontSize="20" Grid.Column="1" Text="{Binding Path=Payment}"/>
+        <TextBlock Grid.Row="8" FontSize="20">Change Owed:</TextBlock>
+        <TextBlock Grid.Row="8" FontSize="20" Grid.Column="1" Text="{Binding Path=Change}"/>
+        <Button Grid.Row="9" Grid.ColumnSpan="2" FontSize="20" Click="Button_Click">Done</Button>
+    </Grid>
+</UserControl>

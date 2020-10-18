@@ -10,19 +10,19 @@
         <StackPanel>
             <TextBlock TextAlignment="Center" FontSize="50"><Run Text="Please Select Preferences"/></TextBlock>
             <ComboBox FontSize="50" Height="100" Margin="100, 30">
-                <ComboBoxItem FontSize ="40">Small</ComboBoxItem>
-                <ComboBoxItem FontSize ="40">Medium</ComboBoxItem>
-                <ComboBoxItem FontSize ="40">Large</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=Size.Small}" FontSize ="40">Small</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=Size.Medium}" FontSize ="40">Medium</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=Size.Large}" FontSize ="40">Large</ComboBoxItem>
             </ComboBox>
             <ComboBox FontSize="50" Height="100" Margin="100, 30">
-                <ComboBoxItem FontSize ="40">BlackBerry</ComboBoxItem>
-                <ComboBoxItem FontSize ="40">Cherry</ComboBoxItem>
-                <ComboBoxItem FontSize ="40">Grapefruit</ComboBoxItem>
-                <ComboBoxItem FontSize ="40">Lemon</ComboBoxItem>
-                <ComboBoxItem FontSize ="40">Peach</ComboBoxItem>
-                <ComboBoxItem FontSize ="40">Watermelon</ComboBoxItem>    
+                <ComboBoxItem IsSelected="{Binding Path=Flavor.BlackBerry}" FontSize ="40">BlackBerry</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=Flavor.Cherry}" FontSize ="40">Cherry</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=Flavor.Grapefurit}" FontSize ="40">Grapefruit</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=Flavor.Lemon}" FontSize ="40">Lemon</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=Flavor.Peach}" FontSize ="40">Peach</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=Flavor.Watermelon}" FontSize ="40">Watermelon</ComboBoxItem>    
             </ComboBox>
-            <CheckBox FontSize ="40" Margin="100, 50">Ice</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ice}" FontSize ="40" Margin="100, 50">Ice</CheckBox>
         </StackPanel>
         <Button FontSize="80" Height="150" Width="300" Margin="546,408,54,42" Click="Done_Click">Done</Button>
         <Button FontSize="35" Height="75" Width=" 150" Margin="375,483,375,42" Click="Cancel_Click">Cancel</Button>

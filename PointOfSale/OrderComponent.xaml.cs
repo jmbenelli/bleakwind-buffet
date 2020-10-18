@@ -30,9 +30,35 @@ namespace PointOfSale
         public OrderComponent()
         {
             InitializeComponent();
-            Order o = new Order();
-            DataContext = o;
         }
 
+        public MainWindow mw
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// Cancels an Order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Order o = new Order();
+            DataContext = o;
+            orderListView.DataContext = o;
+        }
+
+        /// <summary>
+        /// click event that switches to the payment options screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Complete_Click(object sender, RoutedEventArgs e)
+        {
+            var payment = this.FindAncestor<MainWindow>();
+            var paymentScreen = new PaymentOptions();
+            payment.SwapScreen(paymentScreen);
+        }
     }
 }

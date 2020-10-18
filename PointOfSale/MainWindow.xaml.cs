@@ -34,9 +34,12 @@ namespace PointOfSale
             InitializeComponent();
             MenuComponent b = new MenuComponent(this);
             border.Child = b;
-            OrderComponent.DataContext = new Order();
+            OrderComponent o = new OrderComponent();
+            orderBorder.Child = o;
+            Order order = new Order();
+            DataContext = order;
         }
-         
+        
         /// <summary>
         /// This method swaps screens between the customization screens and the menu component screens
         /// </summary>
@@ -45,6 +48,12 @@ namespace PointOfSale
         {
             border.Child = f;
         }
+
+        public void ChangeScreen(FrameworkElement f)
+        {
+            orderBorder.Child = f;
+        }
+
 
     }
 }

@@ -50,8 +50,8 @@ namespace PointOfSale
         private void Done_Click(object sender, RoutedEventArgs e)
         {
             mw.SwapScreen(new MenuComponent(mw));
-            DoubleDraugr d = new DoubleDraugr();
-            this.DataContext = d;
+            //DoubleDraugr d = new DoubleDraugr();
+            //this.DataContext = d;
 
         }
 

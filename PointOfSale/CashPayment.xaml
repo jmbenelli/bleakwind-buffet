@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="PointOfSale.CashPaymentxaml"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="66.667"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Background="LightGreen" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20">$100</Label>
+        <Label Background="LightGreen" Grid.Column="0" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20">$50</Label>
+        <Label Background="LightGreen" Grid.Column="0" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20">$20</Label>
+        <Label Background="LightGreen" Grid.Column="0" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20">$10</Label>
+        <Label Background="LightGreen" Grid.Column="0" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20">$5</Label>
+        <Label Background="LightGreen" Grid.Column="0" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20">$2</Label>
+        <Label Background="LightGreen" Grid.Column="0" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20">$1</Label>
+        <local:MoneyBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Loaded="MoneyBox_Loaded"/>
+        <local:MoneyBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="4"/>
+
+        <Label Grid.Column="6" Grid.Row="2" FontSize="20" Background="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Center" >$1</Label>
+        <Label Grid.Column="6" Grid.Row="3" FontSize="20" Background="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Center" >50c</Label>
+        <Label Grid.Column="6" Grid.Row="4" FontSize="20" Background="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Center" >25c</Label>
+        <Label Grid.Column="6" Grid.Row="5" FontSize="20" Background="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Center" >10c</Label>
+        <Label Grid.Column="6" Grid.Row="6" FontSize="20" Background="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Center" >5c</Label>
+        <Label Grid.Column="6" Grid.Row="7" FontSize="20" Background="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Center" >1c</Label>
+
+        <local:MoneyBox Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="7" Grid.Row="6" Grid.ColumnSpan="4"/>
+        <local:MoneyBox Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="4"/>
+
+
+        <Button Grid.Column="8" Grid.ColumnSpan="3" FontSize="25" >Return To Order</Button>
+        <Label Grid.Row="11" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center">Total Sale:</Label>
+        <TextBlock Text="{Binding Path=Total}" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2"></TextBlock>
+        <Label Grid.Row="11" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">Amount Due:</Label>
+        <TextBlock Text="{Binding Path=AmountDue}" Grid.Row="11" Grid.Column="4" Grid.ColumnSpan="2"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="11" VerticalAlignment="Center" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center">Give as Change</TextBlock>
+        <TextBlock Grid.Row="9" Grid.Column="7" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15">Change Owed</TextBlock>
+        <TextBlock Grid.Row="9" Grid.Column="8" Grid.ColumnSpan="2"></TextBlock>
+        <Button  Grid.Column="11" Grid.Row="9" FontSize="20">Finalize</Button>
+    </Grid>
+</UserControl>

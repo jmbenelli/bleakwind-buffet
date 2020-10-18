@@ -9,10 +9,10 @@
     <Grid Background="Beige">
         <StackPanel>
             <TextBlock Margin="40" TextAlignment="Center" FontSize="50"><Run Text="Please Select Preferences"/></TextBlock>
-            <CheckBox FontSize="40" Margin="100, 10">Broccoli</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 10">Mushrooms</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 10">Tomato</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 10">Cheddar</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Broccoli}" FontSize="40" Margin="100, 10">Broccoli</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mushrooms}" FontSize="40" Margin="100, 10">Mushrooms</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Tomato}" FontSize="40" Margin="100, 10">Tomato</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheddar}" FontSize="40" Margin="100, 10">Cheddar</CheckBox>
         </StackPanel>
         <Button FontSize="80" Height="150" Width="300" Margin="546,408,54,42" Click="Done_Click">Done</Button>
         <Button FontSize="35" Height="75" Width=" 150" Margin="375,483,375,42" Click="Cancel_Click">Cancel</Button>

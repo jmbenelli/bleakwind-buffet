@@ -50,8 +50,8 @@ namespace PointOfSale
         private void Done_Click(object sender, RoutedEventArgs e)
         {
             mw.SwapScreen(new MenuComponent(mw));
-            BriarheartBurger b = new BriarheartBurger();
-            this.DataContext = b;
+            //BriarheartBurger b = new BriarheartBurger();
+            //this.DataContext = b;
         }
 
         /// <summary>

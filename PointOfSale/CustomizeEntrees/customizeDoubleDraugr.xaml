@@ -9,14 +9,14 @@
     <Grid Background="Beige">
         <StackPanel>
             <TextBlock TextAlignment="Center" FontSize="50"><Run Text="Please Select Preferences"/></TextBlock>
-            <CheckBox FontSize="40" Margin="100, 5">Ketchup</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 5">Bun</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 5">Mustard</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 5">Pickle</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 5">Cheese</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 5">Tomato</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 5">Lettuce</CheckBox>
-            <CheckBox FontSize="40" Margin="100, 5">Mayo</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ketchup}" FontSize="40" Margin="100, 5">Ketchup</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Bun}" FontSize="40" Margin="100, 5">Bun</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mustard}" FontSize="40" Margin="100, 5">Mustard</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Pickle}" FontSize="40" Margin="100, 5">Pickle</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheese}" FontSize="40" Margin="100, 5">Cheese</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Tomato}" FontSize="40" Margin="100, 5">Tomato</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Lettuce}" FontSize="40" Margin="100, 5">Lettuce</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mayo}" FontSize="40" Margin="100, 5">Mayo</CheckBox>
         </StackPanel>
         <Button Name="Done" FontSize="80" Height="150" Width="300" Margin="546,408,54,42" Click="Done_Click">Done</Button>
         <Button FontSize="35" Height="75" Width=" 150" Margin="375,483,375,42" Click="Cancel_Click">Cancel</Button>

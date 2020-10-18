@@ -33,6 +33,10 @@ namespace BleakwindBuffet.Data
             Drink = d;
         }
 
+        public Combo()
+        {
+        }
+
         /// <summary>
         /// Price property that gets the price of our combo
         /// </summary>
@@ -42,6 +46,12 @@ namespace BleakwindBuffet.Data
             get
             {
                 return Entree.Price + Side.Price + Drink.Price - 1;
+            }
+            set
+            {
+                price = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+
             }
         }
 
@@ -54,6 +64,12 @@ namespace BleakwindBuffet.Data
             get
             {
                 return Entree.Calories + Side.Calories + Drink.Calories;
+            }
+            set
+            {
+                calories = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+
             }
         }
 
@@ -89,6 +105,8 @@ namespace BleakwindBuffet.Data
             set
             {
                 d = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Drink"));
+
             }
         }
 
@@ -105,6 +123,8 @@ namespace BleakwindBuffet.Data
             set
             {
                 e = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Entree"));
+
             }
         }
 
@@ -121,6 +141,7 @@ namespace BleakwindBuffet.Data
             set
             {
                 s = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Side"));
             }
         }
     }

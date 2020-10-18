@@ -13,7 +13,9 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// Creates our list of order items
         /// </summary>
-        List<IOrderItem> list = new List<IOrderItem>();
+        public List<IOrderItem> list = new List<IOrderItem>();
+
+        public IEnumerable<IOrderItem> i => list.ToArray();
 
         /// <summary>
         /// Event handler for our collection changing
@@ -44,12 +46,13 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// Subtotal property that keeps track of our total - tax
         /// </summary>
-        private double subTotal;
+        double subTotal;
         public double SubTotal
         {
             get
-            {
-                foreach (IOrderItem item in list)
+            {        
+                subTotal = 0;
+                foreach (IOrderItem item in i)
                 {
                     subTotal += item.Price;
                 }
@@ -120,7 +123,7 @@ namespace BleakwindBuffet.Data
         {
             get
             {
-                foreach (IOrderItem item in list)
+                foreach (IOrderItem item in i)
                 {
                     calories += item.Calories;
                 }
@@ -165,10 +168,13 @@ namespace BleakwindBuffet.Data
         {
             list.Add(item);
             item.PropertyChanged += ItemChangedEventListener;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("list"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("i"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tax"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
         }
 
         /// <summary>
