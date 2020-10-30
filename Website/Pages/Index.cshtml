@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@using BleakwindBuffet.Data;
+@using BleakwindBuffet.Data.Entrees;
+@using BleakwindBuffet.Data.Sides;
+@using BleakwindBuffet.Data.Drinks;
+@using BleakwindBuffet.Data.Enums;
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Bleakwind Buffet</h1>
+
+    <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
+
+    <p>Any purchase that contains an Entree, Side, and Drink will result in a $1 discout.</p>
+
+    <p>
+        Soda Flavors are Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon
+    </p>
+
+    <div class="row">
+        <div class="column">
+            <h2>|Entrees|</h2>
+        </div>
+        <div class="column">
+            <h2>Sides|</h2>
+        </div>
+        <div class="column">
+            <h2>Drinks|</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            @foreach (Entree e in Menu.Entrees())
+            {
+                <div class="name">@e.ToString()</div>
+                <div>Price: $@e.Price</div>
+                <div>Calories: @e.Calories</div>
+            }
+        </div>
+        <div class="column">
+            @foreach (Side s in Menu.Sides())
+            {
+
+                @foreach (Size size in Enum.GetValues(typeof(Size)))
+                {
+                    <div class="name">@s.ToString()</div>
+                    <div>Price :$@s.Price</div>
+                    <div>Calories: @s.Calories</div>
+                }
+            }
+        </div>
+        <div class="column">
+            @foreach (Drink d in Menu.Drinks())
+            {
+
+                @foreach (Size size in Enum.GetValues(typeof(Size)))
+                {
+                    <div class="name">@d.ToString()</div>
+                    <div>Price: $@d.Price</div>
+                    <div>Calories: @d.Calories</div>
+                }
+            }
+        </div>
+    </div>
+</div>
