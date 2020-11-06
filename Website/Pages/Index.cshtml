@@ -10,6 +10,42 @@
 @using BleakwindBuffet.Data.Drinks;
 @using BleakwindBuffet.Data.Enums;
 
+<form id="Menu">
+    <div id="search">
+        <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+        <input type="submit" value="Search">
+    </div>
+
+    <div id="filters">
+
+        <h4>Category</h4>
+        @foreach (String category in Menu.Categories)
+        {
+            <label>
+                <input type="checkbox" name="Category" value="@category" checked="@Model.Categories.Contains(category)" />
+                @category
+            </label>
+        }
+
+        <h4>Calories</h4>
+        <div>
+            Between
+            <input name="MinCal" type="number" min="0" max="10000" step="1" placeholder="min" />
+            and
+            <input name="MaxCal" type="number" min="0" max="10000" step="1" placeholder="min" />
+        </div>
+
+        <h4>Price</h4>
+        <div>
+            Between
+            <input name="MinPrice" type="number" min="0" max="100" step=".01" placeholder="min" />
+            and
+            <input name="MaxPrice" type="number" min="0" max="100" step=".01" placeholder="min" />
+        </div>
+
+    </div>
+</form>
+
 
 
 <div class="text-center">
@@ -23,50 +59,55 @@
         Soda Flavors are Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon
     </p>
 
-    <div class="row">
-        <div class="column">
-            <h2>|Entrees|</h2>
-        </div>
-        <div class="column">
-            <h2>Sides|</h2>
-        </div>
-        <div class="column">
-            <h2>Drinks|</h2>
-        </div>
+    <div>
+        <h2>Entrees</h2>
+        @foreach (var item in Model.MenuItems)
+        {
+            var myObject = item as Entree;
+            if (myObject != null)
+            {
+                <div class="name">@item.ToString()</div>
+                <div>Price: $@item.Price</div>
+                <div>Calories: @item.Calories</div>
+            }
+
+        }
+    </div>
+    <div>
+        <h2>Sides</h2>
+        @foreach (var item in Model.MenuItems)
+        {
+
+            @foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
+                var myObject = item as Side;
+                if (myObject != null)
+                {
+                    <div class="name">@item.ToString()</div>
+                    <div>Price :$@item.Price</div>
+                    <div>Calories: @item.Calories</div>
+                }
+
+            }
+        }
+    </div>
+    <div>
+        <h2>Drinks</h2>
+        @foreach (var item in Model.MenuItems)
+        {
+
+            @foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
+                var myObject = item as Drink;
+                if (myObject != null)
+                {
+                    <div class="name">@item.ToString()</div>
+                    <div>Price: $@item.Price</div>
+                    <div>Calories: @item.Calories</div>
+                }
+
+            }
+        }
     </div>
 
-    <div class="row">
-        <div class="column">
-            @foreach (Entree e in Menu.Entrees())
-            {
-                <div class="name">@e.ToString()</div>
-                <div>Price: $@e.Price</div>
-                <div>Calories: @e.Calories</div>
-            }
-        </div>
-        <div class="column">
-            @foreach (Side s in Menu.Sides())
-            {
-
-                @foreach (Size size in Enum.GetValues(typeof(Size)))
-                {
-                    <div class="name">@s.ToString()</div>
-                    <div>Price :$@s.Price</div>
-                    <div>Calories: @s.Calories</div>
-                }
-            }
-        </div>
-        <div class="column">
-            @foreach (Drink d in Menu.Drinks())
-            {
-
-                @foreach (Size size in Enum.GetValues(typeof(Size)))
-                {
-                    <div class="name">@d.ToString()</div>
-                    <div>Price: $@d.Price</div>
-                    <div>Calories: @d.Calories</div>
-                }
-            }
-        </div>
-    </div>
 </div>
