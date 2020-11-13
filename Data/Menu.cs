@@ -112,7 +112,7 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
-        /// List of categories
+        /// Populates our categories
         /// </summary>
         public static string[] Categories
         {

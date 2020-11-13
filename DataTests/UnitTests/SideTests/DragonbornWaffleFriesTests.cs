@@ -165,5 +165,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var c = new DragonbornWaffleFries();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData("Crispy fried potato waffle fries.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            DragonbornWaffleFries aj = new DragonbornWaffleFries();
+            Assert.Equal(d, aj.Description);
+        }
+
     }
 }

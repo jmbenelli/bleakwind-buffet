@@ -253,5 +253,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var c = new SmokehouseSkeleton();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData("Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            SmokehouseSkeleton aj = new SmokehouseSkeleton();
+            Assert.Equal(d, aj.Description);
+        }
+
     }
 }

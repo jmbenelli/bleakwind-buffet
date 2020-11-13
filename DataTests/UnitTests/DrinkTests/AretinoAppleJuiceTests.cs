@@ -215,7 +215,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         }
 
 
-
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData("Fresh squeezed apple juice.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.Equal(d, aj.Description);
+        }
 
 
 

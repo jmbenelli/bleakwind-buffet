@@ -301,5 +301,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var c = new SailorSoda();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData("An old-fashioned jerked soda, carbonated water and flavored syrup poured over a bed of crushed ice.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            SailorSoda aj = new SailorSoda();
+            Assert.Equal(d, aj.Description);
+        }
     }
 }

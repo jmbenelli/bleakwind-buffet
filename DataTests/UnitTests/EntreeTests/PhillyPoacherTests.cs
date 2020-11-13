@@ -195,5 +195,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
 
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData("Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            PhillyPoacher aj = new PhillyPoacher();
+            Assert.Equal(d, aj.Description);
+        }
+
     }
 }

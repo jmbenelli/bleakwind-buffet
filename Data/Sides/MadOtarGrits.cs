@@ -14,7 +14,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class representing the Mad Otar Grits
     /// </summary>
-    public class MadOtarGrits : Side, INotifyPropertyChanged
+    public class MadOtarGrits : Side, IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -82,6 +82,17 @@ namespace BleakwindBuffet.Data.Sides
         public override string ToString()
         {
             return $"{Size} Mad Otar Grits";
+        }
+
+        /// <summary>
+        /// Description of item
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return "Cheesey Grits.";
+            }
         }
     }
 }

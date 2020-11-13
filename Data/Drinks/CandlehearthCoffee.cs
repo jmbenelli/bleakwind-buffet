@@ -157,7 +157,17 @@ namespace BleakwindBuffet.Data.Drinks
                 return $"{Size} Decaf Candlehearth Coffee";
             }
             else return $"{Size} Candlehearth Coffee";
+        }
 
+        /// <summary>
+        /// Description of item
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return " Fair trade, fresh ground dark roast coffee.";
+            }
         }
     }
 }

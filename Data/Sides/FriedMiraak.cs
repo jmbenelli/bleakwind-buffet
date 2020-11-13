@@ -16,7 +16,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class representing the Fried Miraak
     /// </summary>
-    public class FriedMiraak : Side, INotifyPropertyChanged
+    public class FriedMiraak : Side, IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -84,6 +84,17 @@ namespace BleakwindBuffet.Data.Sides
         public override string ToString()
         {
             return $"{Size} Fried Miraak";
+        }
+
+        /// <summary>
+        /// Description of item
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return " Perfectly prepared hash brown pancakes.";
+            }
         }
     }
 }

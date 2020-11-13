@@ -303,5 +303,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var c = new CandlehearthCoffee();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData(" Fair trade, fresh ground dark roast coffee.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            CandlehearthCoffee aj = new CandlehearthCoffee();
+            Assert.Equal(d, aj.Description);
+        }
     }
 }

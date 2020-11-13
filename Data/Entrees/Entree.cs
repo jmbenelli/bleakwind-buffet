@@ -12,6 +12,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// </summary>
     public abstract class Entree
     {
+
         /// <summary>
         /// The price of the Entree
         /// </summary>

@@ -76,11 +76,17 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.Equal("Thugs T-Bone", t.ToString());
         }
 
-        [Fact]
-        public void ShouldImplementINotifyPropertyChanged()
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData("Juicy T-Bone, not much else to say.")]
+        public void ShouldReturnCorrectDescription(string d)
         {
-            var c = new ThugsTBone();
-            Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
+            ThugsT_Bone aj = new ThugsT_Bone();
+            Assert.Equal(d, aj.Description);
         }
+
     }
 }

@@ -252,5 +252,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var c = new GardenOrcOmelette();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData("Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            GardenOrcOmelette aj = new GardenOrcOmelette();
+            Assert.Equal(d, aj.Description);
+        }
+
     }
 }

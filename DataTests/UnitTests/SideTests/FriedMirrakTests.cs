@@ -165,5 +165,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var c = new FriedMiraak();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData(" Perfectly prepared hash brown pancakes.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            FriedMiraak aj = new FriedMiraak();
+            Assert.Equal(d, aj.Description);
+        }
+
     }
 }

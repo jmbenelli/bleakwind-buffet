@@ -22,7 +22,7 @@
         @foreach (String category in Menu.Categories)
         {
             <label>
-                <input type="checkbox" name="Category" value="@category" checked="@Model.Categories.Contains(category)" />
+                <input type="checkbox" name="Categories" value="@category"/>
                 @category
             </label>
         }
@@ -59,55 +59,63 @@
         Soda Flavors are Blackberry, Cherry, Grapefruit, Lemon, Peach, Watermelon
     </p>
 
-    <div>
-        <h2>Entrees</h2>
-        @foreach (var item in Model.MenuItems)
-        {
-            var myObject = item as Entree;
-            if (myObject != null)
+    <div class="flex-columns">
+        <div>
+            <h1>Entrees</h1>
+            @foreach (var item in Model.MenuItems)
             {
-                <div class="name">@item.ToString()</div>
-                <div>Price: $@item.Price</div>
-                <div>Calories: @item.Calories</div>
-            }
-
-        }
-    </div>
-    <div>
-        <h2>Sides</h2>
-        @foreach (var item in Model.MenuItems)
-        {
-
-            @foreach (Size size in Enum.GetValues(typeof(Size)))
-            {
-                var myObject = item as Side;
+                var myObject = item as Entree;
                 if (myObject != null)
                 {
-                    <div class="name">@item.ToString()</div>
-                    <div>Price :$@item.Price</div>
-                    <div>Calories: @item.Calories</div>
-                }
-
-            }
-        }
-    </div>
-    <div>
-        <h2>Drinks</h2>
-        @foreach (var item in Model.MenuItems)
-        {
-
-            @foreach (Size size in Enum.GetValues(typeof(Size)))
-            {
-                var myObject = item as Drink;
-                if (myObject != null)
-                {
-                    <div class="name">@item.ToString()</div>
+                    <h4 class="name">@item.ToString()</h4>
+                    <div>Description: @item.Description</div>
                     <div>Price: $@item.Price</div>
                     <div>Calories: @item.Calories</div>
+
                 }
 
             }
-        }
+        </div>
+        <div>
+            <h1>Sides</h1>
+            @foreach (var item in Model.MenuItems)
+            {
+
+                @foreach (Size size in Enum.GetValues(typeof(Size)))
+                {
+                    var myObject = item as Side;
+                    if (myObject != null)
+                    {
+                        <h4 class="name">@item.ToString()</h4>
+                        <div>Description: @item.Description</div>
+                        <div>Price :$@item.Price</div>
+                        <div>Calories: @item.Calories</div>
+
+                    }
+
+                }
+            }
+        </div>
+        <div>
+            <h1>Drinks</h1>
+            @foreach (var item in Model.MenuItems)
+            {
+
+                @foreach (Size size in Enum.GetValues(typeof(Size)))
+                {
+                    var myObject = item as Drink;
+                    if (myObject != null)
+                    {
+                        <h4 class="name">@item.ToString()</h4>
+                        <div>Description: @item.Description</div>
+                        <div>Price: $@item.Price</div>
+                        <div>Calories: @item.Calories</div>
+
+                    }
+
+                }
+            }
+        </div>
     </div>
 
 </div>

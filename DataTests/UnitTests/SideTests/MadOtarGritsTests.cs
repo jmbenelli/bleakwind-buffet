@@ -165,5 +165,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             var c = new MadOtarGrits();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData("Cheesey Grits.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            MadOtarGrits aj = new MadOtarGrits();
+            Assert.Equal(d, aj.Description);
+        }
+
     }
 }

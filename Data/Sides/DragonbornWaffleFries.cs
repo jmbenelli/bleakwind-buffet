@@ -14,7 +14,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Class representing hte Dragonborn Waffle Fries
     /// </summary>
-    public class DragonbornWaffleFries : Side, INotifyPropertyChanged
+    public class DragonbornWaffleFries : Side, IOrderItem, INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -80,6 +80,17 @@ namespace BleakwindBuffet.Data.Sides
         public override string ToString()
         {
             return $"{Size} Dragonborn Waffle Fries";
+        }
+
+        /// <summary>
+        /// Description of item
+        /// </summary>
+        public string Description
+        {
+            get
+            {
+                return "Crispy fried potato waffle fries.";
+            }
         }
     }
 }

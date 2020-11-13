@@ -459,5 +459,18 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var c = new ThalmorTriple();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(c);
         }
+
+        /// <summary>
+        /// Checks to see if the correct Description value is returned
+        /// </summary>
+        /// <param name="d">The Description return value for the item</param>
+        [Theory]
+        [InlineData(" Think you are strong enough to take on the Thalmor? Inlcudes two 1/4lb patties with a 1/2lb patty inbetween with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg.")]
+        public void ShouldReturnCorrectDescription(string d)
+        {
+            ThalmorTriple aj = new ThalmorTriple();
+            Assert.Equal(d, aj.Description);
+        }
+
     }
 }
